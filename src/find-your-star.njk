@@ -1,0 +1,197 @@
+---
+layout: page.njk
+title: Star Matching with AI - starsforall.com
+description: AI-Powered Personalized Star Matching by starsforall.com non-profit initiative.
+---
+
+<!-- Add your CSS stylesheets or links here -->
+<style>
+    /* Add your styles for better visibility */
+    .question-container {
+        margin-top: 50px;
+    }
+    .question-box {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-bottom: 10px;
+        position: relative;
+        cursor: pointer;
+        text-align: center;
+    }
+    .options {
+        display: none;
+        flex-direction: column;
+        text-align: left;
+    }
+
+    .answer-choice {
+        cursor: pointer;
+        transition: background-color 0.3s;
+        padding: 8px;
+        margin-bottom: 4px;
+    }
+    .answer-choice:hover {
+        background-color: gray;
+    }
+    .answer-box {
+        display: none;
+        margin-top: 10px;
+        font-weight: bold;
+    }
+    .result-section {
+        margin-top: 20px;
+        font-weight: bold;
+    }
+    .success-message {
+        color: green;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center horizontally */
+        justify-content: center; /* Center vertically */
+        height: 10vh; /* Full viewport height */
+        text-align: center; /* Center text horizontally */
+    }
+    .success-message a {
+        margin-top: 0px; /* Add space between text and button */
+    }
+
+    #yourstarContainer {
+        display: none;
+    }
+</style>
+
+<body>
+
+<h1 class="text-3xl sm:text-4xl font-bold text-center mb-5">Unlock Special Pricing</h1>
+
+<div class="justify-text">
+    <p>To encourage a shared love for astronomy, we invite you to showcase your basic knowledge of the universe. Before proceeding, we kindly ask you to answer three simple astronomy-related questions. Should you answer all three correctly, you'll enjoy a special discount - paying only half of the full price!</p>
+
+    <h3 style="color: #619bdc;">Why the Cosmic Quiz?</h3>
+    <p>At STARS for ALL we believe that a little cosmic knowledge enhances the beauty of star matching. It's our way of ensuring that our users appreciate the celestial marvels they are about to discover. It's not a test; it's a celebration of curiosity.</p>
+
+    <h3 style="color: #619bdc;">Ready to Begin?</h3>
+    <p>To embark on this cosmic journey, answer at least one question correctly to proceed. Should you choose to answer all three, you'll unlock a stellar discount. Your contribution not only grants you access to a personalized star but also supports astronomy education for the next generation.</p>
+
+    <div class="question-container">
+        <div class="question-box" id="question1" onclick="showOptions('options1')">
+            <p class="font-bold">What causes the phases of the moon?</p>
+            <div class="options" id="options1">
+                <div class="answer-choice" onclick="checkAnswer('question1', 'q1_1')">1. Shadows from Earth's atmosphere</div>
+                <div class="answer-choice" onclick="checkAnswer('question1', 'q1_2')">2. Changes in lunar mood</div>
+                <div class="answer-choice" onclick="checkAnswer('question1', 'q1_3')">3. The relative positions of the Earth, Moon, and Sun </div>
+            </div>
+            <div class="answer-box" id="answer1"></div>
+        </div>
+
+        <div class="question-box" id="question2" onclick="showOptions('options2')">
+            <p class="font-bold">Which type of galaxy is our Milky Way?</p>
+            <div class="options" id="options2">
+                <div class="answer-choice" onclick="checkAnswer('question2', 'q2_1')">1. Spiral</div>
+                <div class="answer-choice" onclick="checkAnswer('question2', 'q2_2')">2. Elliptical</div>
+                <div class="answer-choice" onclick="checkAnswer('question2', 'q2_3')">3. Disco Ball</div>
+            </div>
+            <div class="answer-box" id="answer2"></div>
+        </div>
+
+        <div class="question-box" id="question3" onclick="showOptions('options3')">
+            <p class="font-bold">Why do stars appear to twinkle?</p>
+            <div class="options" id="options3">
+                <div class="answer-choice" onclick="checkAnswer('question3', 'q3_1')">1. Because they're winking at us</div>
+                <div class="answer-choice" onclick="checkAnswer('question3', 'q3_2')">2. Because of atmospheric turbulence</div>
+                <div class="answer-choice" onclick="checkAnswer('question3', 'q3_3')">3. Because they caught disco fever in the cosmos </div>
+            </div>
+            <div class="answer-box" id="answer3"></div>
+        </div>
+    </div>
+
+    <div class="result-section" id="resultSection"></div>
+
+    <!-- Button to scroll to yourstar_2 -->
+    <div id="yourstarButton" style="text-align: center; margin-top: 20px; display: none;">
+        <button class="px-4 py-2 font-bold rounded-full shadow-md bg-white bg-opacity-80 hover:bg-opacity-50 hover:no-underline" style="font-size: 1.2em; color: #01276c; cursor: pointer;" onclick="scrollToYourStar()">Scroll to Your Star</button>
+    </div>
+
+</div>
+
+<script>
+    let correctAnswers = 0;
+
+    function showOptions(optionsId) {
+        const options = document.getElementById(optionsId);
+        options.style.display = "flex"; // Display options
+    }
+
+    function checkAnswer(questionId, selectedOption) {
+        const answerBox = document.getElementById(`answer${questionId.charAt(questionId.length - 1)}`);
+        const correctAnswer = getCorrectAnswer(questionId);
+
+        if (selectedOption === correctAnswer) {
+            answerBox.textContent = "Correct!";
+            answerBox.style.color = "green";
+            correctAnswers++;
+        } else {
+            answerBox.textContent = "Incorrect. Try again!";
+            answerBox.style.color = "red";
+        }
+
+        answerBox.style.display = "block"; // Display the answer box
+
+        updateResultSection();
+    }
+
+    function getCorrectAnswer(questionId) {
+        // You can customize this function to return the correct answer for each question
+        switch (questionId) {
+            case 'question1':
+                return 'q1_3';
+            case 'question2':
+                return 'q2_1';
+            case 'question3':
+                return 'q3_2';
+            default:
+                return '';
+        }
+    }
+
+    function updateResultSection() {
+        const resultSection = document.getElementById('resultSection');
+        const yourstarButton = document.getElementById('yourstarButton');
+        const totalQuestions = 3;
+
+        if (correctAnswers >= 1 && correctAnswers < totalQuestions) {
+            resultSection.innerHTML = "<a onclick='scrollToYourStar()' id='yourstarButton' class='px-4 py-2 font-bold rounded-full shadow-md bg-white bg-opacity-80 hover:bg-opacity-50 hover:no-underline' style='font-size: 1.2em; color: #01276c; cursor: pointer;'><span style='animation: blink 1s infinite;'>Congratulations! You are ready to proceed to find your star</span></a>";
+            resultSection.classList.add('success-message');
+        } else if (correctAnswers >= totalQuestions) {
+            resultSection.innerHTML = "<a onclick='scrollToYourStar()' id='yourstarButton' class='px-4 py-2 font-bold rounded-full shadow-md bg-white bg-opacity-80 hover:bg-opacity-50 hover:no-underline' style='font-size: 1.2em; color: #01276c; cursor: pointer;'><span style='animation: blink 1s infinite;'>Congratulations! <span style='color: red;'>You unlocked the stellar discount!</span></span></a>";
+            resultSection.classList.add('success-message');
+        } else {
+            resultSection.textContent = `${correctAnswers} out of ${totalQuestions} answered correctly.`;
+            resultSection.classList.remove('success-message');
+            // Show the button when there are no correct answers
+            yourstarButton.style.display = 'block';
+        }
+    }
+
+    function scrollToYourStar() {
+        const yourstarContainer = document.getElementById('yourstarContainer');
+        
+        //const yourstarButton = document.getElementById('yourstarButton');
+        // yourstarButton.style.display = 'none'; // Hide the button
+        yourstarContainer.style.display = 'block'; // Show the yourstar_2 container
+
+        // Scroll to the yourstar_2 container using smooth scrolling
+        yourstarContainer.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+        });
+    }
+</script>
+
+</body>
+
+<main>
+    <div id="yourstarContainer">
+        {% renderFile "./src/_includes/content/yourstar_2.njk" %}
+    </div>
+</main>

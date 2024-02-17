@@ -1,0 +1,82 @@
+---
+layout: base.njk
+isFront: true
+title: Discover Your Unique Star | AI-Powered Star Matching for a Cause 
+---
+<br><br>
+<header
+
+    class="header w-full min-h-[-webkit-fill-available] sm:min-h-screen flex flex-col bg-fixed bg-center sm:bg-center sm:bg-fixed bg-hero-sm sm:bg-hero-lg text-white">
+    <div class="flex flex-col justify-center h-full pt-0">
+    <br>
+        <div class="flex flex-col items-center self-center w-full px-4 sm:flex-row sm:px-0">
+            <div class="w-full pb-12 text-center sm:px-8">
+                <h1 class = "mb-2"> Discover Your Unique Star </h1>
+                <p> AI-Powered Personalized Star Matching for a Cause </p>
+                <br>
+                <br> 
+
+                <a style="display: inline-block; padding: 5px 15px; font-weight: bold; border-radius: 999px; background-color: white; color: #01276c; text-decoration: none; font-size: 1.2em;" href="/find-your-star/">
+                  <div style="margin-bottom: 5px;">Find my star</div>
+                  <div style="font-size: 0.8em; color: red">Complete the astronomy quiz and enjoy a special discount!</div>
+                </a>
+
+                
+            </div>
+        </div>
+    </div> 
+    <div class="flex flex-col justify-center w-full pt-0 relative">
+        {% image "./src/static/img/constellation.webp", "sm:w-1/3 w-1/2 m-auto rounded-lg my-1 opacity-0 blink-image", "Constelation", "(min-width: 4em) 50vw, 100vw" %}
+        {% image "./src/static/img/kids.webp", "w-1/2 sm:w-1/5 m-auto rounded-lg my-1", "Kids looking at stars", "(min-width: 4em) 50vw, 100vw" %}
+    </div>
+
+    <!-- JSON-LD Schema -->
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": ["WebPage", "CreativeWork"],
+  "name": "Discover Your Unique Star - Stars for all, non-profit initiative",
+  "about": "Discover Your Unique Star with STARSforALL, a non-profit initiative where AI powers your star discovery. Experience a unique approach — find a star that resonates with you while contributing to real astronomy education for kids.",
+  "description": "Discover Your Unique Star with STARSforALL, a non-profit initiative where AI powers your star find. Experience a unique approach — find a star that resonates with you while contributing to real astronomy education for kids.",
+  "mainEntityOfPage": "https://starsforall.com/",
+  "publisher": {
+    "@type": "Organization",
+    "name": "StarsForAll",
+    "logo": {
+      "@type": "ImageObject",
+      "caption": "StarsForAll Logo",
+      "contentUrl": "/img/logo.png",
+      "height": 100,
+      "inLanguage": "en-US",
+      "url": "/img/logo.png",
+      "width": 100
+    },
+    "sameAs": [
+      "https://twitter.com/starsforall",
+      "https://www.facebook.com/people/Stars-for-All/61553097004537/",
+      "https://www.linkedin.com/in/starsforall/"
+    ],
+    "url": "https://starsforall.com/"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "/img/starsforall_cover.png",
+    "height": 675,
+    "width": 1200
+  }
+}
+</script>
+
+
+    {% include "navbar.njk" %}
+</header>
+
+
+<main>
+    <div id="about" class="header flex flex-col items-center justify-start w-full min-h-[-webkit-fill-available] sm:min-h-screen bg-center sm:bg-center sm:bg-fixed bg-hero-sm sm:bg-hero-lg">
+        <div class="self-center w-full px-4 pt-8 sm:w-4/5 xl:w-3/4 sm:px:0 text-white">
+            {% renderFile "./src/_includes/content/about.njk" %}
+        </div>
+    </div>
+</main>
+

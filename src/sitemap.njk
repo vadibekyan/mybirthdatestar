@@ -1,0 +1,23 @@
+---
+layout: false
+permalink: sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    {% for page in collections.all %}
+        {% if (not page.data.ignore) and (page.url) and (page.url != '/robots.txt') %}
+            <url>
+                <loc>{{ env.url }}{{ page.url | url | replace('.html', '') | removeTrailingSlash }}</loc>
+                <lastmod>{{ page.date.toISOString() }}</lastmod>
+                {% if page.url == '/' %}
+                    <priority>1.0</priority>
+                {% elseif page.url | startsWith('/find-your-star/') %}
+                    <priority>0.9</priority>
+                {% else %}
+                    <priority>0.3</priority>
+                {% endif %}
+            </url>
+        {% endif %}
+    {% endfor %}
+</urlset>

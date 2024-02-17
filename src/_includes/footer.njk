@@ -1,0 +1,32 @@
+<footer class="relative flex flex-col w-full py-10 text-lg sm:flex-row sm:justify-center bg-center sm:bg-center sm:bg-fixed bg-hero-sm sm:bg-hero-lg">
+  <div class="px-8 py-4 text-center">
+    <ul class="list-none">
+      <li>
+        <a 
+          href="{{ env.url }}" class="text-white no-underline hover:text-white">Home</a>
+      </li>
+    </ul>
+  </div>
+  <div class="w-1/2 h-px mx-auto bg-white sm:h-auto sm:w-px sm:mx-0"></div>
+  <div class="py-4 pl-0 text-center sm:pl-8">
+    <ul class="list-none" style="display: flex; justify-content: center; align-items: center;">
+      {% for item in site.social %}
+      <li style="list-style: none; margin-right: 10px;">
+        <a href="{{ item.url }}" target="_blank" rel="_noopener"><img class="hover:opacity-60"
+              src="{{ item.image }}" alt="{{item.name}} logo"  height="24px" width="24px"></a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</footer>
+<div class="w-full bg-center sm:bg-center sm:bg-fixed bg-hero-sm sm:bg-hero-lg">
+  <span class="block pb-5 text-sm text-white font-light text-center">
+    &copy; {{ site.author }}, <span x-data x-text="new Date().getFullYear()"></span>
+  </span>
+</div>
+
+<style>
+.bg-white {
+  background-color: white;
+}
+</style>

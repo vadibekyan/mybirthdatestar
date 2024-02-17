@@ -1,0 +1,41 @@
+<nav id="header"
+  class="flex flex-col items-center justify-between w-full px-4 py-1 shadow sm:flex-row sm:px-6 sm:bg-transparent sm:shadow-none">
+  <div id="menuHeader"
+    class="flex flex-row flex-no-wrap items-center self-start justify-between w-full sm:w-auto sm:self-center sm:flex-none">
+    <a aria-label="Home" href="/" class="relative inline transition-all duration-500 delay-300 transform opacity-0 hover:no-underline -left-10" x-init="$el.classList.add('translate-x-8');$el.classList.add('opacity-100')">
+      <img src="/img/logo_extended.png" alt="stars for all logo" class="m-1" height="50px" width="150px">
+    </a>
+    <button id="menuBtn" class="block hamburger sm:hidden focus:outline-none" type="button" onclick="navToggle();"
+      aria-label="Show Menu" ><span class="hamburger__top-bun"></span><span
+        class="hamburger__bottom-bun"></span></button>
+  </div>
+  <div id="menu"
+    class="fixed inset-0 z-10 flex-col items-center self-end justify-center hidden h-full py-6 sm:relative sm:w-auto sm:self-center sm:flex sm:flex-row sm:py-0">
+      <a class="w-auto px-3 py-2 text-lg font-bold text-center text-white hover:no-underline hover:text-gray-400  sm:my-0 blink-text"  title="Discover your star with AI"
+      href="{{ env.url }}/find-your-star/">Your Star</a>
+      <a class="w-auto px-3 py-2 text-lg font-bold text-center text-white hover:no-underline hover:text-gray-400 sm:flex sm:py-0" title="About the Stars For All non-profit initiative"
+      href="{% if isFront %}#about{% else %}{{ env.url }}/#about{% endif %}">About</a>
+      <a class="w-auto px-3 py-2 text-lg font-bold text-center text-white hover:no-underline hover:text-gray-400  sm:my-0"  title="Latest News about Stars For All"
+      href="{{ env.url }}/news/">News</a>
+      <a class="w-auto px-3 py-2 text-lg font-bold text-center text-white hover:no-underline hover:text-gray-400  sm:my-0"  title="Activities performed by the Stars For All team"
+      href="{{ env.url }}/activities/">Activities</a>
+      {# <a class="w-auto px-3 py-2 text-lg font-bold text-center text-white hover:no-underline hover:text-gray-400  sm:my-0"  title="Visit the Gallery of the Stars For All page"
+      href="{{ env.url }}/gallery/">Gallery</a> #}
+      <a class="w-auto px-3 py-2 text-lg font-bold text-center text-white hover:no-underline hover:text-gray-400  sm:my-0"  title="The Stars For All Community"
+      href="{{ env.url }}/community/">Community</a>
+    <div class="flex flex-row flex-wrap items-center justify-center py-3 text-white sm:py-0">
+      <ul class="flex m-0 mx-auto text-center">
+        {% for item in site.social %}
+        <li class="p-1">
+          <a href="{{ item.url }}" target="_blank" rel="_noopener"><img class="hover:opacity-60"
+              src="{{ item.image }}" alt="{{item.name}} logo" title = "{{ item.title}}" height="24px" width="24px"></a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <div class="shadow progress-container sm:shadow-none">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+</nav>
+<div id="header-filler"></div>
