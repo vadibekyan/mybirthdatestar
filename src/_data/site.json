@@ -1,30 +1,15 @@
 {
-  "title": "Find  Your Unique Star: AI-Powered Star Matching for a Cause",
-  "description": "Find your unique star with AI, brightening kids' universe and supporting astronomy education. Non-profit initiative. Join us at starsforall.com!",
-  "author": "STARSforALL",
+  "title": "Your Birthday Star: A truly meaningful gift",
+  "description": "Discover Your Zenith Star: A truly unique and meaningful gift, providing important and fascinating insights into your personal cosmic connection.",
+  "author": "myBDstar",
   "image": "/img/logo.png",
   "language": "en",
-  "repo": "https://github.com/vadibekyan/starsforall",
+  "repo": "https://github.com/vadibekyan/mybrithdatestar",
   "social": [
     {
       "title": "Twitter",
-      "url": "https://twitter.com/starsforall",
+      "url": "https://twitter.com/",
       "image": "/img/twitter-x.svg"
-    },
-    {
-      "title": "Facebook",
-      "url": "https://www.facebook.com/people/Stars-for-All/61553097004537/",
-      "image": "/img/facebook-new.svg"
-    },
-    {
-      "title": "Linkedin",
-      "url": "https://www.linkedin.com/in/starsforall/",
-      "image": "/img/linkedin-83.svg"
-    },
-    {
-      "title": "Instagram",
-      "url": "https://www.instagram.com/starsforall_com/?hl=en",
-      "image": "/img/instagram.svg"
     }
   ]
 }

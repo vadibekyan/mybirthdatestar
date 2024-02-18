@@ -3,7 +3,7 @@
   <div id="menuHeader"
     class="flex flex-row flex-no-wrap items-center self-start justify-between w-full sm:w-auto sm:self-center sm:flex-none">
     <a aria-label="Home" href="/" class="relative inline transition-all duration-500 delay-300 transform opacity-0 hover:no-underline -left-10" x-init="$el.classList.add('translate-x-8');$el.classList.add('opacity-100')">
-      <img src="/img/logo_extended.png" alt="stars for all logo" class="m-1" height="50px" width="150px">
+      <img src="/img/logo.png" alt="stars for all logo" class="m-1" height="50px" width="50px">
     </a>
     <button id="menuBtn" class="block hamburger sm:hidden focus:outline-none" type="button" onclick="navToggle();"
       aria-label="Show Menu" ><span class="hamburger__top-bun"></span><span
@@ -11,18 +11,10 @@
   </div>
   <div id="menu"
     class="fixed inset-0 z-10 flex-col items-center self-end justify-center hidden h-full py-6 sm:relative sm:w-auto sm:self-center sm:flex sm:flex-row sm:py-0">
-      <a class="w-auto px-3 py-2 text-lg font-bold text-center text-white hover:no-underline hover:text-gray-400  sm:my-0 blink-text"  title="Discover your star with AI"
+      <a class="w-auto px-3 py-2 text-lg font-bold text-center text-white hover:no-underline hover:text-gray-400  sm:my-0 blink-text"  title="Your Birthdate star"
       href="{{ env.url }}/find-your-star/">Your Star</a>
-      <a class="w-auto px-3 py-2 text-lg font-bold text-center text-white hover:no-underline hover:text-gray-400 sm:flex sm:py-0" title="About the Stars For All non-profit initiative"
+      <a class="w-auto px-3 py-2 text-lg font-bold text-center text-white hover:no-underline hover:text-gray-400 sm:flex sm:py-0" title="About the mybirthdatestar website"
       href="{% if isFront %}#about{% else %}{{ env.url }}/#about{% endif %}">About</a>
-      <a class="w-auto px-3 py-2 text-lg font-bold text-center text-white hover:no-underline hover:text-gray-400  sm:my-0"  title="Latest News about Stars For All"
-      href="{{ env.url }}/news/">News</a>
-      <a class="w-auto px-3 py-2 text-lg font-bold text-center text-white hover:no-underline hover:text-gray-400  sm:my-0"  title="Activities performed by the Stars For All team"
-      href="{{ env.url }}/activities/">Activities</a>
-      {# <a class="w-auto px-3 py-2 text-lg font-bold text-center text-white hover:no-underline hover:text-gray-400  sm:my-0"  title="Visit the Gallery of the Stars For All page"
-      href="{{ env.url }}/gallery/">Gallery</a> #}
-      <a class="w-auto px-3 py-2 text-lg font-bold text-center text-white hover:no-underline hover:text-gray-400  sm:my-0"  title="The Stars For All Community"
-      href="{{ env.url }}/community/">Community</a>
     <div class="flex flex-row flex-wrap items-center justify-center py-3 text-white sm:py-0">
       <ul class="flex m-0 mx-auto text-center">
         {% for item in site.social %}
