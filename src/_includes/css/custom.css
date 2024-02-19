@@ -66,11 +66,7 @@ main > div {
   background: whiteSmoke;
 }
 
-.progress-bar {
-  height: 5px;
-  background: theme('colors.blue.600');
-  width: 0%;
-}
+
 
 /* Responsive navigation */
 .hamburger {
@@ -195,8 +191,8 @@ html, body {
 
 .box-button {
   display: inline-block;
-  padding: 10px 20px;
-  background-color: #3498db;
+  padding: 10px 30px;
+  background-color: #47d723;
   color: #fff;
   text-decoration: none;
   border-radius: 5px;
