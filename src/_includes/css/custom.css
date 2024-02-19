@@ -152,7 +152,7 @@ main > div {
     opacity: 1;
   }
   50% {
-    opacity: 0;
+    opacity: 0.;
   }
   100% {
     opacity: 1;
@@ -160,7 +160,7 @@ main > div {
 }
 
 .blink-text {
-  animation: blink 1.5s infinite;
+  animation: blink 3s infinite;
 }
 
 .blink-image {
