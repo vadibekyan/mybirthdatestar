@@ -3,25 +3,58 @@ layout: base.njk
 isFront: true
 title: Your Birthday Star | A truly meaningful gift
 ---
+
+<style>
+    .center-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .box-image {
+        width: 100%; /* Default width for small screens */
+    }
+
+    @media (min-width: 768px) {
+        /* Adjust image size for medium screens */
+        .box-image {
+            width: 50%;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        /* Adjust image size for large screens */
+        .box-image {
+            width: 40%;
+        }
+    }
+</style>
+
 <br><br>
 <header
-
     class="header w-full min-h-[-webkit-fill-available] sm:min-h-screen flex flex-col bg-fixed bg-center sm:bg-center sm:bg-fixed bg-hero-sm sm:bg-hero-lg text-white">
     <div class="flex flex-col justify-center h-full pt-0">
     <br>
         <div class="flex flex-col items-center self-center w-full px-4 sm:flex-row sm:px-0">
             <div class="w-full pb-12 text-center sm:px-8">
-                <h1 class = "mb-2"> Illuminating Your Life's Start </h1>
-                <p> Discover Your Birth Star: A truly unique and meaningful gift! </p>
+                <h1 class = "mb-2"> Brightened by Stars </h1>
                 <br>
-                <br> 
+                <br>
+                <br>
+                <br>
 
-                <a style="display: inline-block; padding: 5px 15px; font-weight: bold; border-radius: 999px; background-color: white; color: #01276c; text-decoration: none; font-size: 1.2em;" href="/find-your-star/">
-                  <div style="margin-bottom: 5px;">Your Birthday Star</div>
-                </a>
+                <p> Discover the Shining Stars of Your Special Life Moments </p>
+                <div class="center-image">
+                    <img src="/img/events_negate-removebg.png" alt="First Box Image" class="box-image">
+                </div>
+
+                <p class="box-description">A truly unique and meaningful gift!</p>
+                <a href="first-box-link" class="box-button">Order now</a>
+
+
             </div>
         </div>
-    </div> 
+    </div>
 
     <!-- JSON-LD Schema -->
 <script type="application/ld+json">
